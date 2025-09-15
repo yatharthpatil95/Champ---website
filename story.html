@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Story - Champ</title>
+  <meta charset="UTF-8">
+  <title>Stories</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="story.html">Story</a>
-    <a href="calculator.html">Calculator</a>
+    <a href="story.html">Stories</a>
+    <!-- ... other links ... -->
   </nav>
-
-  <h1>My Story</h1>
-  <p>Ek baar ki baat hai... (yahan apni kahani likh sakte ho).</p>
+  <div class="stories">
+    <div class="story-card" onclick="window.location='story1.html'">
+      <img src="story1.jpg" alt="Story 1 Photo">
+      <h2>The Royal Beginning</h2>
+      <p>Click to read...</p>
+    </div>
+    <div class="story-card" onclick="window.location='story2.html'">
+      <img src="story2.jpg" alt="Story 2 Photo">
+      <h2>Champ's Triumph</h2>
+      <p>Click to read...</p>
+    </div>
+    <!-- Add one more story similarly -->
+  </div>
 </body>
 </html>
+
