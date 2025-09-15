@@ -1,41 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Calculator - Champ</title>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    input { width: 200px; padding: 10px; margin: 5px; }
-  </style>
 </head>
 <body>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="story.html">Story</a>
-    <a href="calculator.html">Calculator</a>
+    <!-- Navigation links -->
   </nav>
-
   <h1>Calculator</h1>
-  <input id="num1" type="number" placeholder="Number 1"><br>
-  <input id="num2" type="number" placeholder="Number 2"><br>
-  <button onclick="calculate('+')">+</button>
-  <button onclick="calculate('-')">-</button>
-  <button onclick="calculate('*')">×</button>
-  <button onclick="calculate('/')">÷</button>
-  <h2 id="result">Result: </h2>
-
+  <div class="calculator">
+    <input type="text" id="calc-display" readonly>
+    <div class="calc-buttons">
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button onclick="press('+')">+</button>
+      <!-- More buttons ... -->
+      <button onclick="calc()">=</button>
+      <button onclick="clearCalc()">C</button>
+    </div>
+  </div>
   <script>
-    function calculate(op) {
-      let n1 = parseFloat(document.getElementById('num1').value);
-      let n2 = parseFloat(document.getElementById('num2').value);
-      let res = 0;
-      if (op==='+') res = n1 + n2;
-      if (op==='-') res = n1 - n2;
-      if (op==='*') res = n1 * n2;
-      if (op==='/') res = n1 / n2;
-      document.getElementById('result').innerText = "Result: " + res;
-    }
+    let calcStr = '';
+    function press(val){ calcStr += val; document.getElementById('calc-display').value = calcStr; }
+    function calc(){ document.getElementById('calc-display').value = eval(calcStr); calcStr = ''; }
+    function clearCalc(){ calcStr = ''; document.getElementById('calc-display').value = ''; }
   </script>
 </body>
 </html>
